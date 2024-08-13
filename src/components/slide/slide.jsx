@@ -1,9 +1,28 @@
+import { useEffect, useState } from "react";
 import LogoWrapper from "../logo/logoWrapper";
 import styles from "./slide.module.css";
 
 const Slide = ({ slideRef, title, text, image = false, video = false }) => {
+  const [minHeight, setMinHeight] = useState(0);
+
+  useEffect(() => {
+    const handleMinHeight = () => {
+      setMinHeight(window.innerHeight);
+    };
+
+    window.addEventListener("resize", handleMinHeight);
+
+    handleMinHeight();
+
+    return () => window.removeEventListener("resize", handleMinHeight);
+  }, []);
+
   return (
-    <div ref={slideRef} className={`${styles.slide}`} style={{ backgroundImage: `url(${image})` }}>
+    <div
+      ref={slideRef}
+      className={`${styles.slide}`}
+      style={{ backgroundImage: `url(${image})`, minHeight: minHeight === 0 ? "100vh" : minHeight }}
+    >
       {video ? (
         <div className={styles.videoWrapper}>
           <video autoPlay muted playsInline loop>
