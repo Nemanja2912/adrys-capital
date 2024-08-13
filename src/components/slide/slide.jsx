@@ -15,12 +15,10 @@ const Slide = ({ slideRef, title, text, image = false, video = false }) => {
   //   }, 500);
   // }, []);
 
+  // minHeight: minHeight === 0 ? "100vh" : minHeight;
+
   return (
-    <div
-      ref={slideRef}
-      className={`${styles.slide}`}
-      style={{ backgroundImage: `url(${image})`, minHeight: minHeight === 0 ? "100vh" : minHeight }}
-    >
+    <div ref={slideRef} className={`${styles.slide}`} style={{ backgroundImage: `url(${image})` }}>
       {video ? (
         <div className={styles.videoWrapper}>
           <video autoPlay muted playsInline loop>
