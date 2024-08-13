@@ -1,17 +1,18 @@
 .slide {
-  background-color: white;
-
-  display: flex;
-  width: 100vw;
-
-  align-items: center;
-  gap: 4.8rem;
-
   position: sticky;
-  top: 0;
-
+  width: 100vw;
+  background-color: white;
   overflow: hidden;
   min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+}
+
+.slideContent {
+  display: flex;
+  align-items: center;
+  gap: 4.8rem;
 }
 
 .imageWrapper {
@@ -43,10 +44,8 @@
 }
 
 @media (min-width: 1440px) {
-  .slide {
+  .slideContent {
     gap: 13.3rem;
-
-    grid-template-columns: max-content max-content;
   }
 
   .imageWrapper {
@@ -55,19 +54,20 @@
 }
 
 @media (min-width: 1650px) {
-  .slide {
+  .slide,
+  .slideContent {
     justify-content: center;
   }
 }
 
 @media (min-width: 2000px) {
-  .slide {
+  .slideContent {
     gap: 17.4rem;
   }
 }
 
 @media (max-width: 900px) {
-  .slide {
+  .slideContent {
     gap: 3.3rem;
   }
 
@@ -94,17 +94,13 @@
 }
 
 @media (max-width: 600px) {
-  .slide {
+  .slideContent {
     flex-direction: column-reverse;
     padding-top: 9.5rem;
     padding-bottom: 6.3rem;
     gap: 5.5rem;
-
     justify-content: center;
     align-items: center;
-
-    border-radius: 0px !important;
-    transform: translate(0) !important;
   }
 
   .imageWrapper {
