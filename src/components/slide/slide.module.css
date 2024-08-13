@@ -84,6 +84,11 @@
 }
 
 @media (max-width: 600px) {
+  .slide {
+    border-radius: 0px !important;
+    transform: translate(0) !important;
+  }
+
   .title {
     font-size: 4.4rem;
 
