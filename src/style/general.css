@@ -1,0 +1,43 @@
+@font-face {
+  font-family: Gilroy;
+  src: url(../assets/font/Gilroy-Regular.woff);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Gilroy;
+  src: url(../assets/font/Gilroy-Light.woff2);
+  font-weight: 200;
+}
+
+html {
+  font-size: 0.781vw;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  font-family: "Gilroy";
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 2.632vw;
+  }
+}
