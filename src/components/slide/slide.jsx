@@ -10,11 +10,9 @@ const Slide = ({ slideRef, title, text, image = false, video = false }) => {
       setMinHeight(window.innerHeight);
     };
 
-    window.addEventListener("resize", handleMinHeight);
-
-    handleMinHeight();
-
-    return () => window.removeEventListener("resize", handleMinHeight);
+    setTimeout(() => {
+      handleMinHeight();
+    }, 500);
   }, []);
 
   return (
