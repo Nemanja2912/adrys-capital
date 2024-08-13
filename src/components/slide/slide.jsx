@@ -3,17 +3,17 @@ import LogoWrapper from "../logo/logoWrapper";
 import styles from "./slide.module.css";
 
 const Slide = ({ slideRef, title, text, image = false, video = false }) => {
-  const [minHeight, setMinHeight] = useState(0);
+  // const [minHeight, setMinHeight] = useState(0);
 
-  useEffect(() => {
-    const handleMinHeight = () => {
-      setMinHeight(window.innerHeight);
-    };
+  // useEffect(() => {
+  //   const handleMinHeight = () => {
+  //     setMinHeight(window.innerHeight);
+  //   };
 
-    setTimeout(() => {
-      handleMinHeight();
-    }, 500);
-  }, []);
+  //   setTimeout(() => {
+  //     handleMinHeight();
+  //   }, 500);
+  // }, []);
 
   return (
     <div
