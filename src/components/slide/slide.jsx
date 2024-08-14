@@ -12,9 +12,9 @@ const Slide = ({ slideRef, title, text, image = false, video = false }) => {
       setAnimation(true);
     };
 
-    window.addEventListener("load", handleAnimation);
-
-    return () => window.removeEventListener("load", handleAnimation);
+    setTimeout(() => {
+      setAnimation(true);
+    }, 500);
   }, []);
 
   return (
