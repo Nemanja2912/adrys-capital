@@ -18,8 +18,6 @@ function App() {
       const windowHeight = window.innerHeight;
       const windowWidth = window.innerWidth;
 
-      if (windowWidth < 600) return;
-
       const setSlideHeight = (item) => {
         const itemTop = item.getBoundingClientRect().top;
         const slideBreakHeight = itemTop - windowHeight * 0.05;
@@ -31,16 +29,24 @@ function App() {
         const maxBorder = checkBreakValue(borderRadius, 50);
 
         item.style.borderTopRightRadius = `${maxBorder < 0 ? 0 : maxBorder}px`;
+      };
 
-        // Content animation
-
+      const setAnimation = (item) => {
+        const itemTop = item.getBoundingClientRect().top;
         const content = item.querySelector(".animation");
         const isAnimated = content.classList.contains("show-animation");
 
-        if (itemTop < windowHeight * 0.1 && !isAnimated) content.classList.add("show-animation");
+        const windowHeightBreakPoint = windowWidth > 600 ? 0.1 : 0.5;
+
+        if (itemTop < windowHeight * windowHeightBreakPoint && !isAnimated)
+          content.classList.add("show-animation");
       };
 
-      slides.forEach((item) => setSlideHeight(item));
+      slides.forEach((item) => {
+        setAnimation(item);
+
+        if (windowWidth > 600) setSlideHeight(item);
+      });
     };
 
     const handleScrollThrottled = () => {
