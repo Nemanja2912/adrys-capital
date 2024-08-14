@@ -1,17 +1,17 @@
-import Video1 from "../videos/video.mov";
+import Video1 from "../videos/video.mp4";
 import Image1 from "../images/map.png";
-import Image2 from "../images/fedtower.png";
-import Image3 from "../images/renewables.png";
-import Image4 from "../images/hospitality.png";
+import Image2 from "../images/fedtower.jpg";
+import Image3 from "../images/renewables.jpg";
+import Image4 from "../images/hospitality.jpg";
 
 export const content = [
   {
     title: "Revolutionising asset liquidity",
-    text: "Adrys is the Balkans leading digital alternative asset manager using DLT while embracing AI capabilities in technical advisory",
+    text: "Adrys is the Balkans leading tokenised RWA marketplace using DLT while embracing AI in technical advisory",
     video: Video1,
   },
   {
-    title: "Balkans leading digital alternative asset manager",
+    title: "Balkans leading tokenised RWA marketplace",
     text: "Climate change is a financial problem. Imagine a world without greenwashing. Adrys enables global impact through transparent alternatives financing. Our Ascent platform turn alternative funds into tokenised funds, solving inefficiencies in accessibility and market fluidity.",
     image: Image1,
   },

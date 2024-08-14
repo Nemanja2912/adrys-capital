@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./mapSlide.module.css";
 
-const MapSlide = ({ slideRef, title, text, image, element }) => {
+const MapSlide = ({ slideRef, title, text, image }) => {
   const [stickyTop, setStickyTop] = useState(0);
   useEffect(() => {
     const getCalculation = () => {
@@ -22,13 +22,14 @@ const MapSlide = ({ slideRef, title, text, image, element }) => {
 
     return () => window.removeEventListener("resize", handleSticky);
   }, []);
+
   return (
     <div id="mapSlide" ref={slideRef} className={styles.slide} style={{ top: stickyTop }}>
       <div className={styles.slideContent}>
         <div className={styles.imageWrapper}>
           <img src={image} alt="" />
         </div>
-        <div className={styles.content}>
+        <div className={`${styles.content} animation`}>
           <div className={styles.title}>{title}</div>
           <div className={styles.text}>{text}</div>
         </div>

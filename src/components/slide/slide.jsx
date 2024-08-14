@@ -3,19 +3,19 @@ import LogoWrapper from "../logo/logoWrapper";
 import styles from "./slide.module.css";
 
 const Slide = ({ slideRef, title, text, image = false, video = false }) => {
-  // const [minHeight, setMinHeight] = useState(0);
+  const [animation, setAnimation] = useState(false);
 
-  // useEffect(() => {
-  //   const handleMinHeight = () => {
-  //     setMinHeight(window.innerHeight);
-  //   };
+  useEffect(() => {
+    if (!video) return;
 
-  //   setTimeout(() => {
-  //     handleMinHeight();
-  //   }, 500);
-  // }, []);
+    const handleAnimation = () => {
+      setAnimation(true);
+    };
 
-  // minHeight: minHeight === 0 ? "100vh" : minHeight;
+    window.addEventListener("load", handleAnimation);
+
+    return () => window.removeEventListener("load", handleAnimation);
+  }, []);
 
   return (
     <div ref={slideRef} className={`${styles.slide}`} style={{ backgroundImage: `url(${image})` }}>
@@ -30,7 +30,7 @@ const Slide = ({ slideRef, title, text, image = false, video = false }) => {
       )}
       {video ? <LogoWrapper /> : ""}
       <div className={styles.backgroundWrapper}></div>
-      <div className={styles.contentWrapper}>
+      <div className={`${styles.contentWrapper} animation ${animation ? "show-animation" : ""}`}>
         <div className={styles.title}>{title}</div>
         <div className={styles.text}>{text}</div>
       </div>

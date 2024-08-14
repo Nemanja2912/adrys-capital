@@ -24,6 +24,18 @@ html {
   font-family: "Gilroy";
 }
 
+.animation {
+  transform: translateY(2rem);
+  opacity: 0;
+
+  transition: 0.5s ease-in-out;
+}
+
+.show-animation {
+  transform: translateY(0rem);
+  opacity: 1;
+}
+
 @media (min-width: 1440px) {
   html {
     font-size: 10px;
