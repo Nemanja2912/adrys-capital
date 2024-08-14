@@ -13,7 +13,9 @@ const Slide = ({ slideRef, title, text, image = false, video = false }) => {
     };
 
     if (document.readyState === "complete") {
-      handleAnimation();
+      setTimeout(() => {
+        handleAnimation();
+      }, 100);
     } else {
       window.addEventListener("load", handleAnimation);
     }
