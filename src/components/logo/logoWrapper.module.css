@@ -8,7 +8,7 @@
 }
 
 .logoWrapper img {
-  width: 20.2rem;
+  width: 14.5rem;
 }
 
 @media (max-width: 900px) {
@@ -17,6 +17,6 @@
   }
 
   .logoWrapper img {
-    width: 14.2rem;
+    width: 8rem;
   }
 }

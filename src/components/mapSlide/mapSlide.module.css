@@ -1,7 +1,7 @@
 .slide {
   position: sticky;
   width: 100vw;
-  background-color: white;
+  background-color: #fafafa;
   overflow: hidden;
   min-height: 100vh;
 
@@ -34,13 +34,32 @@
 }
 
 .title {
-  font-size: 6.9rem;
+  font-size: 5.4rem;
   line-height: 94%;
   margin-bottom: 2.6rem;
 }
 
 .text {
   font-size: 2rem;
+  line-height: normal;
+}
+
+.flagWrapper {
+  margin: 2.8rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.slide a {
+  background-color: black;
+  padding: 1.2rem;
+  border-radius: 0.4rem;
+
+  color: white;
+  text-decoration: none;
+
+  font-weight: 200;
 }
 
 @media (min-width: 1440px) {
@@ -83,7 +102,7 @@
   }
 
   .title {
-    font-size: 4.8rem;
+    font-size: 3.4rem;
 
     margin-bottom: 1.8rem;
   }
@@ -123,8 +142,15 @@
   }
 
   .title {
-    font-size: 4.4rem;
+    font-size: 2.8rem;
 
     margin-bottom: 1.8rem;
+  }
+
+  .flagWrapper {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 }

@@ -17,6 +17,13 @@
   box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 29px 0px;
 }
 
+.solutionSlide {
+  color: black;
+  background-color: #fafafa;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 .backgroundWrapper {
   background-color: rgba(0, 0, 0, 0.6);
 
@@ -35,6 +42,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.slideAtl .contentWrapper {
+  max-width: 78rem;
+  align-items: flex-start;
+  gap: 4rem;
+
+  padding: 2rem;
 }
 
 .videoWrapper {
@@ -68,7 +83,43 @@
   max-width: 60rem;
 }
 
+.card {
+  background-color: rgba(255, 255, 255, 0.16);
+  padding: 3.2rem;
+  max-width: 78.1rem;
+  width: 100%;
+  border-radius: 0.6rem;
+
+  display: flex;
+  gap: 1.4rem;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card:nth-child(2) {
+  margin-bottom: 3.5rem;
+  margin-top: 3.5rem;
+}
+
+.cardTitle {
+  font-size: 3.2rem;
+  font-weight: 200;
+}
+
+.slideAtl .cardTitle {
+  margin-bottom: 1.5rem;
+}
+
+.cardText {
+  font-size: 1.6rem;
+}
+
 @media (max-width: 900px) {
+  .slideAtl .contentWrapper {
+    gap: 3.2rem;
+  }
+
   .title {
     font-size: 6.7rem;
 
@@ -76,14 +127,39 @@
     margin-bottom: 1.8rem;
   }
 
-  .text {
+  .text,
+  .cardText {
     font-size: 16px;
 
     max-width: 42.1rem;
   }
+
+  .card {
+    max-width: 80%;
+    gap: 0.8rem;
+    padding: 2.4rem;
+  }
+
+  .cardTitle {
+    font-size: 2rem;
+    line-height: 100%;
+  }
+
+  .card:nth-child(2) {
+    margin-bottom: 2.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .cardText {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 600px) {
+  .slideAtl .contentWrapper {
+    gap: 2.6rem;
+  }
+
   .slide {
     border-radius: 0px !important;
     transform: translate(0) !important;
@@ -99,5 +175,24 @@
     font-size: 16px;
 
     max-width: 33.3rem;
+  }
+
+  .card {
+    max-width: 90%;
+
+    padding: 2rem 1.6rem;
+  }
+
+  .cardTitle {
+    font-size: 2rem;
+  }
+
+  .card:nth-child(2) {
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .cardText {
+    max-width: 100%;
   }
 }

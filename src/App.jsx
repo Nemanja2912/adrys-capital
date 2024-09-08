@@ -66,17 +66,25 @@ function App() {
             key={index}
             slideRef={(el) => (slidesRef.current[index] = el)}
             title={item.title}
+            label={item.label}
+            flag={item.flag}
+            text={item.text}
+            image={item.image}
+          />
+        ) : index === 4 ? (
+          <MapSlide
+            key={index}
+            slideRef={(el) => (slidesRef.current[index] = el)}
+            title={item.title}
             text={item.text}
             image={item.image}
           />
         ) : (
           <Slide
             key={index}
+            index={index}
             slideRef={(el) => (slidesRef.current[index] = el)}
-            title={item.title}
-            text={item.text}
-            image={item.image}
-            video={item.video}
+            data={item}
           />
         )
       )}
